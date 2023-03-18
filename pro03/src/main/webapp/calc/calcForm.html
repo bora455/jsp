@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+	function fn_sendCalc() {
+		var sendCalc=document.sendCalc;
+		var n1 = sendCalc.n1.value;
+		var op = sendCalc.op.value;
+		var n2 = sendCalc.n2.value;
+		sendCalc.method = "get";
+		sendCalc.action = "calc.jsp";
+		sendCalc.submit();
+	}
+	</script>
+</head>
+<body>
+	<h2>계산기 만들기</h2>
+	<hr>
+		<form name="sendCalc">
+		<table align="center">
+			<input type="text" name="n1" size="10"> <select name="op">
+				<option>+</option>
+				<option>-</option>
+				<option>*</option>
+				<option>/</option>
+			</select> <input type="text" name="n2" size="10">
+		</table>
+			<input type="button" value="계산" onclick="fn_sendCalc()">
+			<input type="reset" value="다시입력">
+			<input type="hidden" name="command" value="addNumber />
+		</form>
+</body>
+</html>
